@@ -1,5 +1,5 @@
 ````markdown name=README.md
-# Joquenp- : Rock Paper Scissors Game in Python
+# Joquenpo : Rock Paper Scissors Game in Python
 
 Welcome to Joquenpo, a simple and fun implementation of the classic Rock, Paper, Scissors game written in Python! Challenge the computer, test your luck, and enjoy a quick game right from your terminal.
 
