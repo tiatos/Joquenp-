@@ -1,0 +1,63 @@
+from time import sleep
+from random import randint
+fim = bool(False)
+cont = bool(True)
+comp = int(0)
+scoreplay = int(0)
+scorecomp = int(0)
+print("-><-"*30)
+print("Welcome to JOQUENPÔ")
+while not fim:
+    while cont:
+        print("-><-" * 15)
+        jog = str(input("What´s your play? \n-Paper \n-Scissors \n-Rock\n-Leave \n->")).lower().strip()
+        if jog != "leave":
+            comp = randint(1,3) # 1-Paper 2-Scissors 3-Rock
+            print("Thinking...............")
+            sleep(1)
+            if comp == 1:
+                print("Paper!!!")
+            elif comp ==2:
+                print("Scissors!!!")
+            else:
+                print("Rock!!!")
+            sleep(1)
+            match jog:
+                case "paper":
+                    if comp == 1:
+                        print("Tie! Lets play again!")
+                    elif comp ==2:
+                        print("You lost! Another turn?")
+                        scorecomp += 1
+                    else:
+                        print("You won! How about another?")
+                        scoreplay += 1
+                case "scissors":
+                    if comp == 1:
+                        print("You won! How about another?")
+                        scoreplay += 1
+                    elif comp == 2:
+                        print("Tie! Lets play again!")
+                    else:
+                        print("You lost! Another turn?")
+                        scorecomp += 1
+                case "rock":
+                    if comp == 1:
+                        print("You lost! Another turn?")
+                        scorecomp += 1
+                    elif comp == 2:
+                        print("You won! How about another?")
+                        scoreplay += 1
+                    else:
+                        print("Tie! Lets play again!")
+                case _:
+                    print("Please be certain to choose an option or to write them correctly")
+        else:
+            fim = True
+            cont = False
+        print("-><-" * 15)
+        print(">--( computer {}x{} player )--<".format(scorecomp, scoreplay))
+        sleep(1)
+print("-><-"*15)
+print("Thanks for playing! Until next time!")
+print("-><-"*15)
